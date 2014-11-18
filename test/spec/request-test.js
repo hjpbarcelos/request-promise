@@ -657,6 +657,15 @@ describe('Request-Promise', function () {
 
         });
 
+        it('.finally(Function handler)', function (done) {
+
+            rp('http://localhost:4000/200')
+                .finally(function () {
+                    done();
+                });
+
+        });
+
         it('.promise() to return the Bluebird promise itself', function () {
 
             var context = { message: 'Hello World!'};
